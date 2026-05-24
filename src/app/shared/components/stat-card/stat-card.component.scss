@@ -1,0 +1,61 @@
+.stat-card {
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  transition: 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-box {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 18px;
+
+  background: #eff6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.icon-box i {
+  font-size: 24px;
+
+  color: #2563eb;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 14px;
+
+  color: #64748b;
+}
+
+.value {
+  font-size: 34px;
+  font-weight: 700;
+
+  color: #0f172a;
+
+  margin-top: 4px;
+}

@@ -1,0 +1,139 @@
+<div class="page" *ngIf="project; else notFound">
+  <!-- BACK -->
+  <a class="back" (click)="goBack()">← Back to projects</a>
+
+  <!-- HEADER -->
+  <div class="card header">
+    <div class="header-left">
+      <p class="mono">{{ project.id }}</p>
+      <h2>{{ project.contractName }}</h2>
+      <p class="muted">
+        {{ project.contractor }} · Eng: {{ project.engineer }} · Coord:
+        {{ project.coordinator }}
+      </p>
+    </div>
+
+    <span class="badge" [ngClass]="project.status">
+      {{ project.status }}
+    </span>
+  </div>
+
+  <!-- STATS -->
+  <div class="grid">
+    <div class="stat">
+      <p>Start</p>
+      <h4>{{ project.startDate || "—" }}</h4>
+    </div>
+
+    <div class="stat">
+      <p>Target</p>
+      <h4>{{ project.targetDate }}</h4>
+    </div>
+
+    <div class="stat highlight">
+      <p>Progress</p>
+      <h4>{{ project.progress }}%</h4>
+    </div>
+
+    <div class="stat">
+      <p>Issues</p>
+      <h4>{{ project.issues?.length || 0 }}</h4>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="card progress-card">
+    <div class="row">
+      <span>Overall Progress</span>
+      <span class="percent">{{ project.progress }}%</span>
+    </div>
+
+    <div class="progress">
+      <div class="bar" [style.width.%]="project.progress"></div>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button (click)="tab = 'overview'" [class.active]="tab === 'overview'">
+      Overview
+    </button>
+    <button (click)="tab = 'documents'" [class.active]="tab === 'documents'">
+      Documents
+    </button>
+    <button (click)="tab = 'history'" [class.active]="tab === 'history'">
+      History
+    </button>
+    <button (click)="tab = 'issues'" [class.active]="tab === 'issues'">
+      Issues
+    </button>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="card content">
+    <!-- OVERVIEW -->
+    <div *ngIf="tab === 'overview'" class="fade">
+      <h3>Project Summary</h3>
+
+      <p class="muted">
+        This project is currently in <b>{{ project.status }}</b> stage.
+      </p>
+    </div>
+
+    <!-- DOCUMENTS -->
+    <div *ngIf="tab === 'documents'" class="fade">
+      <div *ngIf="!project.documents?.length" class="empty">
+        No documents uploaded
+      </div>
+
+      <div class="item" *ngFor="let d of project.documents">
+        <div class="doc">
+          📄 <span>{{ d.name }}</span>
+        </div>
+        <small>{{ d.size }}</small>
+      </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div *ngIf="tab === 'history'" class="timeline-wrap fade">
+      <div class="timeline" *ngFor="let h of project.history">
+        <div class="dot"></div>
+
+        <div>
+          <div class="history-top">
+            <b>{{ h.progress }}%</b>
+            <span>{{ h.date }}</span>
+          </div>
+          <p>{{ h.note }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ISSUES -->
+    <div *ngIf="tab === 'issues'" class="fade">
+      <div *ngIf="!project.issues?.length" class="empty">
+        No issues reported
+      </div>
+
+      <div class="issue" *ngFor="let i of project.issues">
+        <span class="tag" [ngClass]="i.severity">
+          {{ i.severity }}
+        </span>
+
+        <div class="issue-title">
+          {{ i.title }}
+        </div>
+
+        <small>{{ i.date }}</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOT FOUND -->
+<ng-template #notFound>
+  <div class="card center">
+    <p class="muted">Project not found</p>
+    <button class="btn" (click)="goBack()">Back</button>
+  </div>
+</ng-template>

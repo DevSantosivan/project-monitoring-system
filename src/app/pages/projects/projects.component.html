@@ -1,0 +1,100 @@
+<div class="page">
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <h1>Projects</h1>
+      <p>Monitoring table for all engineering contracts</p>
+    </div>
+
+    <app-button
+      label="+ New Project"
+      variant="primary"
+      (clicked)="goToCreate()"
+    ></app-button>
+  </div>
+
+  <!-- TABLE CARD -->
+  <div class="table-card">
+    <!-- SEARCH + FILTER -->
+    <div class="table-toolbar">
+      <!-- SEARCH -->
+      <div class="search-box">
+        <i class="bx bx-search search-icon"></i>
+
+        <input
+          type="text"
+          placeholder="Search by ID, contract, contractor, engineer..."
+          [(ngModel)]="search"
+        />
+      </div>
+
+      <!-- FILTER -->
+      <div class="filter-box">
+        <i class="bx bx-filter filter-icon"></i>
+
+        <select [(ngModel)]="filterStatus">
+          <option value="ALL">All Statuses</option>
+          <option value="APPROVED">APPROVED</option>
+          <option value="ON PROCESS">ON PROCESS</option>
+          <option value="DELAYED">DELAYED</option>
+          <option value="WITH ISSUES">WITH ISSUES</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <table>
+      <thead>
+        <tr>
+          <th>Project ID</th>
+          <th>Contract Name</th>
+          <th>Contractor</th>
+          <th>Engineer</th>
+          <th>Coordinator</th>
+          <th>Progress</th>
+          <th>Status</th>
+          <th>Target</th>
+          <th>Delay</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of filteredProjects">
+          <td class="mono">{{ p.id }}</td>
+
+          <td>{{ p.contractName }}</td>
+
+          <td>{{ p.contractor }}</td>
+          <td>{{ p.engineer }}</td>
+          <td>{{ p.coordinator }}</td>
+
+          <!-- PROGRESS BAR -->
+          <td>
+            <div class="progress">
+              <div class="bar" [style.width.%]="p.progress"></div>
+            </div>
+            <small>{{ p.progress }}%</small>
+          </td>
+
+          <!-- STATUS -->
+          <td>
+            <span class="badge" [ngClass]="getStatusColor(p.status)">
+              {{ p.status }}
+            </span>
+          </td>
+
+          <td>{{ p.targetDate }}</td>
+
+          <td class="truncate">
+            {{ p.delayReason || "—" }}
+          </td>
+
+          <td>
+            <button class="view-btn" (click)="goToView(p.id)">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

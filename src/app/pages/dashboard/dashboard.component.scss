@@ -1,0 +1,66 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 4px;
+}
+
+/* HEADER */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.page-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.page-header p {
+  font-size: 13px;
+  color: #64748b;
+  max-width: 500px;
+}
+
+/* STATS GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ✅ CHARTS FLEX FIX */
+.charts-grid {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+
+/* each chart same width */
+.charts-grid app-chart-card {
+  flex: 1;
+  min-width: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* STACK CHARTS ON SMALL SCREEN */
+@media (max-width: 900px) {
+  .charts-grid {
+    flex-direction: column;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

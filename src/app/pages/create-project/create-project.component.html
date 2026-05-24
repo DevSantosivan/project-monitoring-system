@@ -1,0 +1,76 @@
+<div class="page">
+  <!-- Back Button -->
+  <button class="back-btn" (click)="goBack()">← Back to projects</button>
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Create New Project</h2>
+    <p>Add a new engineering project to the monitoring system.</p>
+  </div>
+
+  <!-- Form Card -->
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form-card">
+    <!-- GRID FIELDS -->
+    <div class="grid">
+      <div class="field">
+        <label>Project ID</label>
+        <input formControlName="id" />
+      </div>
+
+      <div class="field">
+        <label>Contract Name</label>
+        <input
+          formControlName="contractName"
+          placeholder="e.g. Eastbound Bridge Rehab"
+        />
+      </div>
+
+      <div class="field">
+        <label>Contractor</label>
+        <input formControlName="contractor" />
+      </div>
+
+      <div class="field">
+        <label>Engineer</label>
+        <input formControlName="engineer" />
+      </div>
+
+      <div class="field">
+        <label>Coordinator</label>
+        <input formControlName="coordinator" />
+      </div>
+
+      <div class="field">
+        <label>Progress %</label>
+        <input type="number" min="0" max="100" formControlName="progress" />
+      </div>
+
+      <div class="field">
+        <label>Start Date</label>
+        <input type="date" formControlName="startDate" />
+      </div>
+
+      <div class="field">
+        <label>Target Date</label>
+        <input type="date" formControlName="targetDate" />
+      </div>
+    </div>
+
+    <!-- Delay Reason -->
+    <div class="field full">
+      <label>Delay Reason (optional)</label>
+      <textarea
+        rows="3"
+        formControlName="delayReason"
+        placeholder="Add any known cause of delay or blocker..."
+      ></textarea>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button type="button" class="cancel" (click)="goBack()">Cancel</button>
+
+      <button type="submit" class="save">Save Project</button>
+    </div>
+  </form>
+</div>

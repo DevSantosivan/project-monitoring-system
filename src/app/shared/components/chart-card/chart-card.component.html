@@ -1,0 +1,19 @@
+<div class="chart-card">
+  <div class="chart-header">
+    <div class="icon-box">
+      <i class="bx bx-bar-chart-alt-2"></i>
+    </div>
+
+    <div class="text-content">
+      <h3 class="title">{{ title }}</h3>
+
+      <p class="chart-description">
+        {{ description }}
+      </p>
+    </div>
+  </div>
+
+  <div class="chart-wrapper">
+    <canvas [id]="chartId"></canvas>
+  </div>
+</div>

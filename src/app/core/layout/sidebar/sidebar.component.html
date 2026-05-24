@@ -1,0 +1,39 @@
+<div class="sidebar">
+  <div class="top-section">
+    <div class="logo-section">
+      <div class="logo-icon">PMS</div>
+
+      <div class="logo-text">
+        <h2>Project Monitor</h2>
+        <p>Engineering System</p>
+      </div>
+    </div>
+
+    <div class="menus">
+      @for (menu of menus; track menu.label) {
+        <a
+          [routerLink]="menu.route"
+          routerLinkActive="active"
+          class="menu-item"
+        >
+          <i class="{{ menu.icon }} icon"></i>
+
+          <span class="label">
+            {{ menu.label }}
+          </span>
+        </a>
+      }
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="profile-card">
+      <div class="profile-avatar">I</div>
+
+      <div class="profile-info">
+        <h4>Kevin</h4>
+        <p>Project Engineer</p>
+      </div>
+    </div>
+  </div>
+</div>

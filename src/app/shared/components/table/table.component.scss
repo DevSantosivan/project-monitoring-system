@@ -1,0 +1,146 @@
+.table-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+
+  transition: 0.2s ease;
+}
+
+/* hover same vibe as chart/stat */
+.table-card:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADER (same layout as chart-card) */
+.table-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* ICON BOX (unified UI system) */
+.icon-box {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 18px;
+  background: #eff6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.icon-box i {
+  font-size: 22px;
+  color: #2563eb;
+}
+
+/* TEXT */
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* DESCRIPTION */
+.table-description {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* TABLE */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+  color: #0f172a;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+tr:hover {
+  background: #f8fafc;
+}
+
+/* STATUS BADGES */
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* APPROVED */
+.status-approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ON PROCESS */
+.status-process {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* LACKING DOCS */
+.status-lacking {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* PROGRESS */
+.progress-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  font-size: 12px;
+  color: #64748b;
+  min-width: 40px;
+}

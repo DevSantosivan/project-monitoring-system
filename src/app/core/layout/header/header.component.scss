@@ -1,0 +1,202 @@
+.header {
+  width: 100%;
+  height: 85px;
+
+  background: #ffffff;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.header-left h2 {
+  font-size: 22px;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.header-left p {
+  margin-top: 4px;
+
+  font-size: 13px;
+
+  color: #64748b;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-box {
+  width: 280px;
+  height: 48px;
+
+  background: #f8fafc;
+
+  border-radius: 16px;
+
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search-box i {
+  font-size: 20px;
+
+  color: #64748b;
+}
+
+.search-box input {
+  flex: 1;
+
+  background: transparent;
+
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+
+  color: #0f172a;
+}
+
+.search-box input::placeholder {
+  color: #94a3b8;
+}
+
+.create-btn {
+  height: 48px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #2563eb;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.create-btn:hover {
+  background: #1d4ed8;
+}
+
+.create-btn i {
+  font-size: 20px;
+}
+
+.notification-btn {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.notification-btn:hover {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+.notification-btn i {
+  font-size: 22px;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-left: 6px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 16px;
+
+  background: #2563eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.profile-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #0f172a;
+}
+
+.profile-info p {
+  margin-top: 3px;
+
+  font-size: 12px;
+
+  color: #64748b;
+}
+
+@media (max-width: 900px) {
+  .header {
+    padding: 0 18px;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .profile-info {
+    display: none;
+  }
+
+  .create-btn span {
+    display: none;
+  }
+
+  .create-btn {
+    width: 48px;
+
+    padding: 0;
+
+    justify-content: center;
+  }
+}

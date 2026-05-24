@@ -1,0 +1,66 @@
+.chart-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+
+  transition: 0.2s ease;
+}
+
+/* hover same as stat-card */
+.chart-card:hover {
+  transform: translateY(-3px);
+}
+
+/* HEADER (same structure vibe) */
+.chart-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+/* ICON BOX (same as stat-card) */
+.icon-box {
+  width: 54px;
+  height: 54px;
+
+  border-radius: 18px;
+  background: #eff6ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.icon-box i {
+  font-size: 22px;
+  color: #2563eb;
+}
+
+/* TEXT */
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* DESCRIPTION */
+.chart-description {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* CHART AREA */
+.chart-wrapper {
+  height: 320px;
+  margin-top: 16px;
+}

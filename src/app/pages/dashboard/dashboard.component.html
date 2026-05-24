@@ -1,0 +1,47 @@
+<div class="dashboard">
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Dashboard</h1>
+    <p>Overview of projects, progress, and status.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    @for (stat of stats; track stat.title) {
+      <app-stat-card
+        [title]="stat.title"
+        [value]="stat.value"
+        [icon]="stat.icon"
+      />
+    }
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts-grid">
+    <app-chart-card
+      title="Project Status"
+      description="Distribution of all projects based on their current status (Approved, On-Process, Lacking Documents)."
+      type="pie"
+      [labels]="['Approved', 'On-Process', 'Lacking Docs']"
+      [data]="[10, 5, 3]"
+    />
+
+    <app-chart-card
+      title="Progress Trend"
+      description="Project progression overview based on timeline tracking (P1 to P4 stages)."
+      type="line"
+      [labels]="['P1', 'P2', 'P3', 'P4']"
+      [data]="[1, 2, 3, 4]"
+    />
+  </div>
+
+  <!-- 📊 TABLE SECTION (NEW) -->
+  <div class="table-section">
+    <app-table
+      title="Recent Projects"
+      description="List of latest project activities with their current status, owner, and progress tracking."
+      [columns]="['name', 'status', 'owner', 'progress']"
+      [rows]="projects"
+    />
+  </div>
+</div>
